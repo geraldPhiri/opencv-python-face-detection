@@ -11,8 +11,7 @@ retrieved, frame=cam.read()
 
 #if a frame has been read loop
 while(retrieved):
-    retrieved, frame=cam.read()
-    
+ 
     #find faces in grayscale frame remember that grayscale
     #is 2-dimensional thus it contains less computaional information
     #thus it makes the process of finding faces quicker
@@ -24,4 +23,5 @@ while(retrieved):
         cv2.rectangle(frame,(x,y),(x+w,y+h),(255,0,0),2)#(255,0,0) is for color of rectangle, 2 is for width of rectangle
     cv2.imshow("face detection(python+opencv)",frame)
     cv2.waitKey(2)
+    retrieved, frame=cam.read()
 cam.release()
